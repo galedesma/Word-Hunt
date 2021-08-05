@@ -13,7 +13,12 @@ const Header = ({category, setCategory, word, setWord}) => {
           }
         },
       });
-
+    
+    const handleChange = (language) => {
+        setCategory(language);
+        setWord("");
+    }
+    
     return (
     <div className="header">
         <span className="title">{word ? word : "Word Hunt"}</span>
@@ -30,7 +35,7 @@ const Header = ({category, setCategory, word, setWord}) => {
                     select
                     label="Language"
                     value={category}
-                    onChange={(e) => setCategory(e.target.value)}
+                    onChange={(e) => handleChange(e.target.value)}
                     >
                     {categories.map((option)=>(
                         <MenuItem key={option.label} value={option.label}>
