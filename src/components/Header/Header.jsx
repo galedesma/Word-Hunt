@@ -3,13 +3,13 @@ import { createTheme, MenuItem, TextField, ThemeProvider } from '@material-ui/co
 import categories from '../../data/category'
 import "./Header.css"
 
-const Header = ({category, setCategory, word, setWord}) => {
+const Header = ({category, setCategory, word, setWord, LightMode}) => {
 
     const darkTheme = createTheme({
         palette: {
-          type: 'dark',
+          type: LightMode ? "light" : "dark",
           primary: {
-              main: "#fff"
+              main: LightMode ? "#000" : "#fff"
           }
         },
       });
